@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     font-family: "Bebas Neue", sans-serif;
@@ -7,8 +8,55 @@
 }
 
 
+/* Background Video */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.hero header {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+}
+
+.hero nav,
+.hero header {
+    position: relative;
+    z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
 
 
+
+/* Navbar */
 nav {
     display: flex;
     align-items: center;
@@ -26,7 +74,7 @@ nav>.get-in-touch {
     margin: 2em 3em;
     letter-spacing: .2em;
     padding: .5em 1.2em;
-    font-weight: 800;
+    font-weight: 100;
 }
 
 nav>.get-in-touch::before {
@@ -43,7 +91,7 @@ nav>.get-in-touch>a {
     position: relative;
 }
 
-body>nav>ul>li:nth-child(3)>a {
+nav>ul>li:nth-child(3)>a {
     width: auto;
     max-width: none;
     font-size: 2.8em;
@@ -55,14 +103,14 @@ body>nav>ul>li:nth-child(3)>a {
     margin: 0;
 }
 
-nav .icons{
+nav .icons {
     margin-left: 1.5em;
 }
 
-nav i{
+nav i {
     padding: .25em;
     font-size: 1.2em;
-    color: #676767;
+    color: #fff;
 }
 
 nav li {
@@ -78,19 +126,57 @@ nav a {
 }
 
 nav ul a {
+    letter-spacing: .1em;
     padding: 0 10px;
     display: block;
-    color: #676767;
+    color: #fff;
+    font-weight: 200;
     font-size: 1.2em;
     line-height: 2em;
 }
 
 
 
+/* Header */
 header {
-    background-color: blue;
+    background-color: transparent;
     color: white;
     grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    padding: 0em .15em;
+    font-size: 5em;
+    line-height: 85px;
+    font-weight: 900;
+}
+
+header div h1{
+    font-family: "Montserrat", sans-serif;
+}
+
+header>div>h1:nth-child(2) {
+    color: #b71923;
+}
+
+header>h1 {
+    font-size: 3em;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: 10px;
 }
 
 main {
