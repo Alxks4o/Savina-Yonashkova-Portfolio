@@ -250,6 +250,7 @@ aside #aside-card iframe {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .ad-bttn a {
@@ -260,9 +261,6 @@ aside #aside-card iframe {
     letter-spacing: .08em;
 }
 
-.ad-bttn:hover {
-    cursor: pointer;
-}
 
 
 main {
