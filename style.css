@@ -75,6 +75,7 @@ nav>.get-in-touch {
     letter-spacing: .2em;
     padding: .5em 1.2em;
     font-weight: 100;
+    font-size: 1.15em;
 }
 
 nav>.get-in-touch::before {
