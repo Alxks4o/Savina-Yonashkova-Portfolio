@@ -192,7 +192,7 @@ aside {
     align-items: center;
 }
 
-aside div {
+aside #aside-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: #b71923;
@@ -201,7 +201,7 @@ aside div {
     align-items: center;
 }
 
-aside div p {
+aside #aside-card p {
     font-family: "Montserrat", sans-serif;
     text-align: center;
     padding: 15% 1em;
@@ -211,14 +211,14 @@ aside div p {
     font-weight: 400;
 }
 
-aside div iframe {
+aside #aside-card iframe {
     width: 30em;
     margin-left: 3em;
 }
 
 .ad-bttn {
 position: absolute;
-    top: 51.7em;
+    top: 55.4em;
     left: 50;
     background: #b71923;
     color: white;
