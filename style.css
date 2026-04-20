@@ -116,7 +116,37 @@ nav .icons {
 nav i {
     padding: .25em;
     font-size: 1.2em;
-    color: #fff;
+    color: #e4e4e4;
+ 
+}
+
+.icons a {
+    display: inline-flex;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #091114;
+    transition: all 0.3s ease;
+}
+
+/* LinkedIn */
+.icons a:nth-child(1):hover {
+    color: white;
+    text-shadow:
+        0 0 10px #0ce5da,
+        0 0 20px #0ce5da;
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Instagram */
+.icons a:nth-child(2):hover {
+    color: white;
+    text-shadow:
+        0 0 8px #833ab4,
+        0 0 16px #c13584;
+    transform: translateY(-3px) scale(1.1);
 }
 
 nav li {
@@ -348,6 +378,7 @@ main {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    margin: 4em 0;
 }
 
 .banner {
@@ -360,15 +391,16 @@ main {
 .banner:nth-child(1) {
     background-color: #0ce5da;
 }
+
 .banner:nth-child(2) {
     background-color: #f2b122;
     z-index: 5;
 }
+
 .banner:nth-child(3) {
     background-color: #f26174;
 }
 
-/* angled */
 .banner-angled {
     transform: rotate(-3deg);
     width: 150%;
@@ -395,11 +427,11 @@ main {
     padding-right: 3.5rem;
 }
 
-/* animation */
 @keyframes marquee {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(-50%);
     }
@@ -407,9 +439,12 @@ main {
 
 /* apply animation */
 .banner-right .track,
-.banner-left .track,
-.banner-angled .track{
+.banner-left .track {
     animation: marquee 100s linear infinite;
+}
+
+.banner-angled .track {
+    animation: marquee 80s linear infinite;
 }
 
 
@@ -475,12 +510,70 @@ main {
 
 
 
+/* Footer */
 footer {
-    background-color: darkgreen;
-    color: white;
     grid-area: footer;
+    display: flex;
+    background-color: #2e2e2e;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+footer h1 {
+    font-size: 3em;
+    letter-spacing: .05em;
+    color: #ececec;
+    margin-top: 2em;
+}
+
+footer div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0em 2em;
+}
+
+footer div div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0em 4em;
+}
+
+footer div div h2 {
+    font-family: "Montserrat", sans-serif;
+    color: #b71923;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    margin: 1em 0;
+}
+
+footer div a {
+    color: #dadada;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 1.5em;
+    transition: opacity .2s ease-in;
+}
+
+footer div a:hover {
+    opacity: .8;
+}
+
+footer p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+    letter-spacing: 1px;
+    margin: 3em;
+    color: #dadada;
+}
 
 
 

@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const original = group.innerHTML;
 
-        // repeat until wide enough for smooth scroll
         while (group.scrollWidth < window.innerWidth) {
             group.innerHTML += original;
         }
