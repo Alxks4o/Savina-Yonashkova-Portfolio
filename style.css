@@ -264,8 +264,9 @@ aside #aside-card p {
     font-weight: 400;
 }
 
-aside #aside-card iframe {
+aside #aside-card video {
     width: 30em;
+    border-radius: 1em;
     margin-left: 3em;
 }
 
@@ -313,7 +314,7 @@ main {
     display: flex;
     position: relative;
     width: 100%;
-    border-radius: 2em;
+    border-radius: 1em;
     overflow: hidden;
     align-items: center;
     justify-content: center;
@@ -335,7 +336,7 @@ main {
     height: 100%;
     cursor: pointer;
     object-fit: cover;
-    border-radius: 2em;
+    border-radius: 1em;
     transition: opacity .4s ease-in-out;
 }
 
@@ -501,7 +502,7 @@ main {
 
 .img-wrapper {
     overflow: hidden;
-    border-radius: 2em;
+    border-radius: 1em;
 }
 
 .img-wrapper:nth-child(1) {
