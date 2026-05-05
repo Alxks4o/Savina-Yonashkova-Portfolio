@@ -257,13 +257,15 @@ aside {
     grid-area: aside;
     background-color: #36151E;
     padding: 1em;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-aside #aside-card {
+#aside-card {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: #36151E;
@@ -272,7 +274,7 @@ aside #aside-card {
     align-items: center;
 }
 
-aside #aside-card p {
+#aside-card p {
     font-family: "Montserrat", sans-serif;
     text-align: center;
     padding: 15% 1em;
@@ -282,7 +284,7 @@ aside #aside-card p {
     font-weight: 400;
 }
 
-aside #aside-card video {
+#aside-card video {
     width: 30em;
     border-radius: 1em;
     margin-left: 3em;
@@ -291,21 +293,27 @@ aside #aside-card video {
 
 .ad-bttn {
     position: absolute;
-    top: 94%;
-    left: 34.5%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+
+    width: 20%;
     background: #36151E;
     color: white;
-    padding: .74em 12em;
+    padding: .74em 4em;
     text-transform: uppercase;
     clip-path: polygon(8% 0, 92% 0, 100% 100%, 0% 100%);
+
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+
+    z-index: 10;
 }
 
 .ad-bttn a {
     color: #fff;
+    text-align: center;
     text-decoration: none;
     font-size: 1.7em;
     font-weight: 100;
