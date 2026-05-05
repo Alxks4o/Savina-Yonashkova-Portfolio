@@ -8,8 +8,20 @@
 }
 
 
+.hero-video {
+    background-color: #9c438aab;
+}
+
+.hero-video header video {
+    width: 50%;
+    height: auto;
+    margin-top: 2em;
+    border-radius: 1em;
+}
+
 /* Background Video */
-.hero {
+.hero,
+.hero-video {
     position: relative;
     height: 100vh;
     overflow: hidden;
@@ -25,14 +37,16 @@
     z-index: -1;
 }
 
-.hero nav {
+.hero nav,
+.hero-video nav {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
 }
 
-.hero header {
+.hero header,
+.hero-video header {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -42,16 +56,19 @@
 }
 
 .hero nav,
-.hero header {
+.hero header,
+.hero-video nav,
+.hero-video header {
     position: relative;
     z-index: 1;
 }
 
-.hero::after {
+.hero::after,
+.hero-video::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.507);
 }
 
 
@@ -84,26 +101,26 @@ nav ul {
     content: "";
     position: absolute;
     inset: 0;
-    background: #b71923;
+    background: #36151E;
     transform: skew(340deg);
     z-index: -1;
 }
 
 .get-in-touch:hover::before {
-    background: #9b1821;
+    background: #36151e9d;
 }
 
 .get-in-touch a {
     color: white;
 }
 
-nav>ul>li:nth-child(3)>a {
+.savina-navbar {
     width: auto;
     max-width: none;
     font-size: 2.8em;
     letter-spacing: -1px;
     letter-spacing: .05em;
-    color: #b71923;
+    color: #36151E;
     font-weight: 1000;
     align-self: center;
     margin: 0;
@@ -117,7 +134,7 @@ nav i {
     padding: .25em;
     font-size: 1.2em;
     color: #e4e4e4;
- 
+
 }
 
 .icons a {
@@ -218,12 +235,13 @@ header h1 {
     font-weight: 900;
 }
 
+
+
 header div h1 {
     font-family: "Montserrat", sans-serif;
-}
-
-header>div>h1:nth-child(2) {
-    color: #b71923;
+    background: linear-gradient(110deg, #ffffff, #36151E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 header>h1 {
@@ -237,7 +255,7 @@ header>h1 {
 /* Aside */
 aside {
     grid-area: aside;
-    background-color: #b71923;
+    background-color: #36151E;
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -248,7 +266,7 @@ aside {
 aside #aside-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: #b71923;
+    background-color: #36151E;
     margin: 4em 5em;
     justify-items: center;
     align-items: center;
@@ -275,7 +293,7 @@ aside #aside-card video {
     position: absolute;
     top: 55.4em;
     left: 50;
-    background: #b71923;
+    background: #36151E;
     color: white;
     padding: .74em 12em;
     text-transform: uppercase;
@@ -391,16 +409,16 @@ main {
 
 /* colors */
 .banner:nth-child(1) {
-    background-color: #0ce5da;
+    background-color: #726DA8;
 }
 
 .banner:nth-child(2) {
-    background-color: #f2b122;
+    background-color: #36151E;
     z-index: 5;
 }
 
 .banner:nth-child(3) {
-    background-color: #f26174;
+    background-color: #CEB7B3;
 }
 
 .banner-angled {
@@ -477,7 +495,7 @@ main {
 }
 
 .work-title h1:nth-child(2) {
-    color: #f2b122;
+    color: #36151E;
 }
 
 .work-card img {
@@ -516,64 +534,18 @@ main {
 footer {
     grid-area: footer;
     display: flex;
-    background-color: #2e2e2e;
+    background-color: #0f0f0f;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-footer h1 {
-    font-size: 3em;
-    letter-spacing: .05em;
-    color: #ececec;
-    margin-top: 2em;
-}
-
-footer div {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0em 2em;
-}
-
-footer div div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0em 4em;
-}
-
-footer div div h2 {
-    font-family: "Montserrat", sans-serif;
-    color: #b71923;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    font-weight: 900;
-    letter-spacing: 0.03em;
-    margin: 1em 0;
-}
-
-footer div a {
-    color: #dadada;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 1.1em;
-    font-weight: 400;
-    letter-spacing: 2px;
-    line-height: 1.5em;
-    transition: opacity .2s ease-in;
-}
-
-footer div a:hover {
-    opacity: .8;
 }
 
 footer p {
     font-family: "Montserrat", sans-serif;
     font-size: 1em;
     letter-spacing: 1px;
-    margin: 3em;
+    margin: 1em;
+    margin-top: 10em;
     color: #dadada;
 }
 
