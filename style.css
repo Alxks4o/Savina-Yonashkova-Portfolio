@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titan+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+    --accent-color: #36151E;
+}
+
 * {
     font-family: "Bebas Neue", sans-serif;
     padding: 0;
@@ -101,13 +105,13 @@ nav ul {
     content: "";
     position: absolute;
     inset: 0;
-    background: #36151E;
+    background: var(--accent-color);
     transform: skew(340deg);
     z-index: -1;
 }
 
 .get-in-touch:hover::before {
-    background: #36151e9d;
+    background: #7c3b4c;
 }
 
 .get-in-touch a {
@@ -120,7 +124,7 @@ nav ul {
     font-size: 2.8em;
     letter-spacing: -1px;
     letter-spacing: .05em;
-    color: #36151E;
+    color: var(--accent-color);
     font-weight: 1000;
     align-self: center;
     margin: 0;
@@ -239,7 +243,7 @@ header h1 {
 
 header div h1 {
     font-family: "Montserrat", sans-serif;
-    background: linear-gradient(110deg, #ffffff, #36151E);
+    background: linear-gradient(110deg, #ffffff, var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -255,7 +259,7 @@ header>h1 {
 /* Aside */
 aside {
     grid-area: aside;
-    background-color: #36151E;
+    background-color: var(--accent-color);
     padding: 1em;
     position: relative;
     display: flex;
@@ -268,7 +272,7 @@ aside {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background-color: #36151E;
+    background-color: var(--accent-color);
     margin: 4em 5em;
     justify-items: center;
     align-items: center;
@@ -298,7 +302,7 @@ aside {
     transform: translate(-50%, -100%);
 
     width: 20%;
-    background: #36151E;
+    background: var(--accent-color);
     color: white;
     padding: .74em 4em;
     text-transform: uppercase;
@@ -329,78 +333,6 @@ main {
 }
 
 
-/* Video & Animation page card links */
-.link-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2em;
-    margin: 2em;
-}
-
-.card {
-    display: flex;
-    position: relative;
-    width: 100%;
-    border-radius: 1em;
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.card video {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-}
-
-.card img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    object-fit: cover;
-    border-radius: 1em;
-    transition: opacity .4s ease-in-out;
-}
-
-.card img:hover {
-    opacity: 0;
-}
-
-.slanted-bttn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-}
-
-.slanted-bttn a {
-    position: relative;
-    z-index: 1;
-    background: transparent;
-    color: #091114;
-    text-decoration: none;
-    font-size: 2.2em;
-    letter-spacing: .1em;
-    padding: 0.5em .8em;
-}
-
-.slanted-bttn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #ececec;
-    transform: skew(-20deg);
-    z-index: 0;
-}
-
-
-
 /* Animated banner */
 .banners {
     display: flex;
@@ -421,7 +353,7 @@ main {
 }
 
 .banner:nth-child(2) {
-    background-color: #36151E;
+    background-color: var(--accent-color);
     z-index: 5;
 }
 
@@ -478,6 +410,66 @@ main {
 
 
 /* My work card links */
+.card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card video,
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card video {
+    display: block;
+}
+
+.card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    border-radius: 1em;
+}
+
+.slanted-bttn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.slanted-bttn a {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    color: #091114;
+    text-decoration: none;
+    font-size: 2.2em;
+    letter-spacing: .1em;
+    padding: 0.5em .8em;
+}
+
+.slanted-bttn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #ececec;
+    transform: skew(-20deg);
+    z-index: 0;
+}
+
 .my-work {
     display: flex;
     margin: 2em;
@@ -503,39 +495,28 @@ main {
 }
 
 .work-title h1:nth-child(2) {
-    color: #36151E;
-}
-
-.work-card img {
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    object-fit: cover;
-    border-radius: 2em;
-    transition: transform .3s ease-in-out;
-}
-
-.work-card img:hover {
-    transform: scale(1.1);
+    color: var(--accent-color);
 }
 
 .work-card {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 250px;
     gap: 1em;
     margin: 2em 0;
 }
 
-.img-wrapper {
-    overflow: hidden;
-    border-radius: 1em;
-}
 
-.img-wrapper:nth-child(1) {
+div.work-card > div:nth-child(1), 
+div.work-card > div:nth-child(5), 
+div.work-card > div:nth-child(6) {
     grid-row: span 2;
 }
 
+div.work-card > div:nth-child(5),
+div.work-card > div:nth-child(2) {
+    grid-column: span 2;
+}
 
 
 /* Footer */
