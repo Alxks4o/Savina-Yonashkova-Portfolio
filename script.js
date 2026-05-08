@@ -27,83 +27,67 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const card_details = [
-  ["Film", "./assets/background video/bg-vid.mp4", "./assets/image-1.jpg", "/film.html"],
-  ["Film", "./assets/background video/bg-vid.mp4", "./assets/image-1.jpg", "/film.html"],
-  ["Film", "./assets/background video/bg-vid.mp4", "./assets/image-1.jpg", "/film.html"],
-  ["Film", "./assets/background video/bg-vid.mp4", "./assets/image-1.jpg", "/film.html"],
-  ["Film", "./assets/background video/bg-vid.mp4", "./assets/image-1.jpg", "/film.html"],
-  ["Advertising", "./assets/background video/bg-vid.mp4", "./assets/image-1.jpg", "/advertising.html"],
-  ["Advertising", "./assets/background video/bg-vid.mp4", "./assets/image-1.jpg", "/advertising.html"],
-  ["Advertising", "./assets/background video/bg-vid.mp4", "./assets/image-1.jpg", "/advertising.html"],
-  ["Videography", "./assets/background video/bg-vid.mp4", "./assets/image-1.jpg", "/videography.html"]
+  ["Film", "./assets/image-1.jpg", "/film.html"],
+  ["Film", "./assets/image-1.jpg", "/film.html"],
+  ["Film", "./assets/image-1.jpg", "/film.html"],
+  ["Film", "./assets/image-1.jpg", "/film.html"],
+  ["Film", "./assets/image-1.jpg", "/film.html"],
+  ["Advertising", "./assets/image-1.jpg", "/advertising.html"],
+  ["Advertising", "./assets/image-1.jpg", "/advertising.html"],
+  ["Advertising", "./assets/image-1.jpg", "/advertising.html"],
+  ["Videography", "./assets/image-1.jpg", "/videography.html"]
 ];
 
-const parent_grid = document.querySelector(".work-card");
+const parent_grid = document.querySelector(".work-cards");
 
-card_details.forEach((card) => {
-  // create card container
-  const card_div = document.createElement("div");
-  card_div.classList.add("card");
+card_details.forEach((card, index) => {
 
-  // button div
-  const bttn_div = document.createElement("div");
-  bttn_div.classList.add("slanted-bttn");
+  const cardElement = document.createElement("div");
+  cardElement.classList.add("card");
 
-  // button/link
-  const bttn = document.createElement("a");
-  bttn.href = card[3];
-  bttn.innerText = card[0];
+  const imageElement = document.createElement("img");
+  imageElement.src = card[1];
+  imageElement.alt = card[0];
 
-  // video
-  const video = document.createElement("video");
+  const titleDiv = document.createElement("div");
+  titleDiv.classList.add("slanted-bttn");
+
+  const titleElement = document.createElement("a");
+  titleElement.textContent = card[0];
+  titleElement.href = card[2];
 
 
-  video.autoplay = true;
-  video.muted = true;
-  video.loop = true;
-  video.playsInline = true;
-
-  video.preload = "metadata";
-
-  video.width = 1920;
-  video.height = 1080;
-
-  video.poster = card[2];
-
-  const source = document.createElement("source");
-  source.src = card[1];
-  source.type = "video/mp4";
-
-  video.appendChild(source);
-
-  // image
-  const thumbnail = document.createElement("img");
-
-  thumbnail.src = card[2];
-
-  thumbnail.width = 1920;
-  thumbnail.height = 1080;
-
-  thumbnail.loading = "lazy";
-  thumbnail.decoding = "async";
-
-  // assemble
-  bttn_div.appendChild(bttn);
-
-  card_div.appendChild(bttn_div);
-  card_div.appendChild(video);
-  card_div.appendChild(thumbnail);
-
-  parent_grid.appendChild(card_div);
-
-  thumbnail.addEventListener("mouseover", () => {
-    video.style.display = "block";
-    thumbnail.style.display = "none";
+  imageElement.addEventListener("click", () => {
+    window.location.href = card[2];
   });
 
-  video.addEventListener("mouseout", () => {
-    video.style.display = "none";
-    thumbnail.style.display = "block";
+  if (index === 0) {
+    cardElement.classList.add("large");
+  }
+
+  if (index === 1) {
+    cardElement.classList.add("tall");
+  }
+
+  if (index === 6 || index === 2) {
+    cardElement.classList.add("wide");
+  }
+
+  cardElement.appendChild(imageElement);
+
+  titleDiv.appendChild(titleElement);
+  cardElement.appendChild(titleDiv);
+
+  parent_grid.appendChild(cardElement);
+
+  cardElement.addEventListener("mouseout", () => {
+    titleDiv.style.display = "block";
+    titleDiv.querySelector("a").style.display = "block";
+  });
+
+  cardElement.addEventListener("mouseover", () => {
+    titleDiv.style.display = "none";
+    titleDiv.querySelector("a").style.display = "none";
   });
 });
 

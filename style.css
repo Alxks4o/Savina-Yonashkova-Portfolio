@@ -462,85 +462,117 @@ main {
 
 
 
-/* My work card links */
-.card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 1em;
-    overflow: hidden;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+/* My work cards */
+.work-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: 260px;
+    gap: 1.5rem;
+    margin: 4em 5vw;
 }
 
-.card video,
-.card img {
+
+/* Base card */
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.2rem;
+    background: #111;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Featured variations */
+.card.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.card.wide {
+    grid-column: span 2;
+}
+
+.card.tall {
+    grid-row: span 2;
+}
+
+
+/* Images */
+.work-cards img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.card video {
     display: block;
-}
-
-.card img {
-    position: absolute;
-    top: 0;
-    left: 0;
+    transition: transform 0.4s ease;
     cursor: pointer;
-    border-radius: 1em;
 }
 
+
+/* Hover effects */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* Slanted button */
 .slanted-bttn {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+    left: 2rem;
+    bottom: 2rem;
+    display: inline-block;
+    z-index: 5;
 }
 
-.slanted-bttn a {
-    position: relative;
-    z-index: 1;
-    background: transparent;
-    color: #091114;
-    text-decoration: none;
-    font-size: 2.2em;
-    letter-spacing: .1em;
-    padding: 0.5em .8em;
-}
 
+/* Slanted button background */
 .slanted-bttn::before {
     content: "";
     position: absolute;
     inset: 0;
     background: #ececec;
     transform: skew(-20deg);
-    z-index: 0;
+    border-radius: 0.4rem;
+    z-index: -1;
 }
 
-.my-work {
-    display: flex;
-    margin: 2em;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+/* Slanted button text */
+.slanted-bttn a {
+    position: relative;
+    display: inline-block;
+    color: #091114;
+    text-decoration: none;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    letter-spacing: .08em;
+    padding: 0.7em 1.2em;
+    font-weight: 600;
+    z-index: 2;
 }
 
+
+/* Slanted button hover */
+.slanted-bttn:hover::before {
+    transform: skew(-20deg) scale(1.05);
+    background: #ffffff;
+}
+
+
+/* Work Title */
 .work-title {
+    margin-top: 5em;
     display: flex;
-}
-
-.work-title h1 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 2.5em;
-    font-weight: 900;
-    text-transform: uppercase;
-    padding: 0 .25em;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    gap: .2em;
 }
 
 .work-title h1:nth-child(1) {
@@ -551,25 +583,7 @@ main {
     color: var(--accent-color);
 }
 
-.work-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: 250px;
-    gap: 1em;
-    margin: 2em 0;
-}
 
-
-div.work-card>div:nth-child(1),
-div.work-card>div:nth-child(5),
-div.work-card>div:nth-child(6) {
-    grid-row: span 2;
-}
-
-div.work-card>div:nth-child(5),
-div.work-card>div:nth-child(2) {
-    grid-column: span 2;
-}
 
 
 /* Footer */
@@ -579,11 +593,7 @@ div.work-card>div:nth-child(2) {
 
 footer {
     grid-area: footer;
-    display: flex;
     background-color: #0f0f0f;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 footer p {
@@ -592,6 +602,7 @@ footer p {
     letter-spacing: 1px;
     margin: 1em;
     margin-top: 10em;
+    text-align: center;
     color: #dadada;
 }
 
