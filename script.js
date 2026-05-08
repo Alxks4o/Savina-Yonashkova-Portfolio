@@ -40,55 +40,56 @@ const card_details = [
 
 const parent_grid = document.querySelector(".work-cards");
 
-card_details.forEach((card, index) => {
+if (parent_grid) {
+  card_details.forEach((card, index) => {
 
-  const cardElement = document.createElement("div");
-  cardElement.classList.add("card");
+    const cardElement = document.createElement("div");
+    cardElement.classList.add("card");
 
-  const imageElement = document.createElement("img");
-  imageElement.src = card[1];
-  imageElement.alt = card[0];
+    const imageElement = document.createElement("img");
+    imageElement.src = card[1];
+    imageElement.alt = card[0];
 
-  const titleDiv = document.createElement("div");
-  titleDiv.classList.add("slanted-bttn");
+    const titleDiv = document.createElement("div");
+    titleDiv.classList.add("slanted-bttn");
 
-  const titleElement = document.createElement("a");
-  titleElement.textContent = card[0];
-  titleElement.href = card[2];
+    const titleElement = document.createElement("a");
+    titleElement.textContent = card[0];
+    titleElement.href = card[2];
 
 
-  imageElement.addEventListener("click", () => {
-    window.location.href = card[2];
+    imageElement.addEventListener("click", () => {
+      window.location.href = card[2];
+    });
+
+    if (index === 0) {
+      cardElement.classList.add("large");
+    }
+
+    if (index === 1) {
+      cardElement.classList.add("tall");
+    }
+
+    if (index === 6 || index === 2) {
+      cardElement.classList.add("wide");
+    }
+
+    cardElement.appendChild(imageElement);
+
+    titleDiv.appendChild(titleElement);
+    cardElement.appendChild(titleDiv);
+
+    parent_grid.appendChild(cardElement);
+
+    cardElement.addEventListener("mouseout", () => {
+      titleDiv.style.display = "block";
+      titleDiv.querySelector("a").style.display = "block";
+    });
+
+    cardElement.addEventListener("mouseover", () => {
+      titleDiv.style.display = "none";
+      titleDiv.querySelector("a").style.display = "none";
+    });
   });
-
-  if (index === 0) {
-    cardElement.classList.add("large");
-  }
-
-  if (index === 1) {
-    cardElement.classList.add("tall");
-  }
-
-  if (index === 6 || index === 2) {
-    cardElement.classList.add("wide");
-  }
-
-  cardElement.appendChild(imageElement);
-
-  titleDiv.appendChild(titleElement);
-  cardElement.appendChild(titleDiv);
-
-  parent_grid.appendChild(cardElement);
-
-  cardElement.addEventListener("mouseout", () => {
-    titleDiv.style.display = "block";
-    titleDiv.querySelector("a").style.display = "block";
-  });
-
-  cardElement.addEventListener("mouseover", () => {
-    titleDiv.style.display = "none";
-    titleDiv.querySelector("a").style.display = "none";
-  });
-});
-
+}
 
