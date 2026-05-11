@@ -254,7 +254,7 @@ header>h1 {
 .hero-advertising,
 .hero-videography,
 .hero-about {
-    background: linear-gradient(180deg, #5e2a53, #30162b, #7e4372,#0f0f0f);
+    background: linear-gradient(180deg, #5e2a53, #30162b, #7e4372, #0f0f0f);
     height: min-content;
 }
 
@@ -404,7 +404,7 @@ aside {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -99%);
 
     width: 20%;
     background: var(--accent-color);
@@ -671,6 +671,8 @@ body {
 
 
 
+@media (max-width: 900px) {}
+
 
 
 /* Mobile version */
@@ -824,17 +826,27 @@ body {
 
 
     /* Aside */
+
     #aside-card {
+        width: 100%;
         grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+        overflow: hidden;
     }
 
     #aside-card p {
         font-size: 1em;
-        width: 150%;
+        width: 90%;
     }
 
     #aside-card video {
-        width: 150%;
+        width: 100%;
+        max-width: 22rem;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        border-radius: 1em;
     }
 
     .ad-bttn {
@@ -896,10 +908,17 @@ body {
         font-size: 2rem;
     }
 
+    .my-work {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .work-cards {
+        width: 80%;
         grid-template-columns: 1fr;
         gap: 3rem;
-        margin: 4em 5vw;
+        margin: 4em 0em;
     }
 
 
