@@ -677,14 +677,24 @@ body {
 
     /* Navbar */
     .get-in-touch {
-        display: none;
+        position: absolute;
+        top: -2.5%;
+        right: -10%;
+
+        z-index: -1;
+        width: 6.5em;
+    }
+
+    .get-in-touch a {
+        font-size: .9em;
     }
 
     .retract-nav {
         display: none;
     }
 
-    .savina-navbar {
+    .savina-navbar,
+    .hide-mobile {
         display: none;
     }
 
@@ -698,6 +708,7 @@ body {
         align-items: flex-start;
         justify-content: center;
         z-index: 1000;
+        width: 100vw;
     }
 
     nav::before {
@@ -772,6 +783,37 @@ body {
 
 
 
+    /* Headers without the background video */
+    .film,
+    .advertising,
+    .videography,
+    .about {
+        margin: 40% 0;
+    }
+
+    .film h1,
+    .advertising h1,
+    .videography h1,
+    .about h1 {
+        font-size: 2em;
+    }
+
+    .film div,
+    .advertising div {
+        width: 100%;
+        margin: 5% 0;
+
+        grid-template-columns: 1fr;
+    }
+
+    .videography iframe {
+        margin-top: 1em;
+        width: 100%;
+        height: 100%;
+    }
+
+
+
     /* Aside */
     #aside-card {
         grid-template-columns: 1fr;
@@ -784,9 +826,6 @@ body {
 
     #aside-card video {
         width: 150%;
-        border-radius: 1em;
-        margin: 0;
-        cursor: pointer;
     }
 
     .ad-bttn {
@@ -815,18 +854,39 @@ body {
     }
 
 
+
+    /* About */
+    .about-container {
+        width: 80%;
+    }
+
+    .about-writing {
+        gap: 1em;
+    }
+
+    .about-writing p {
+        padding: 0 1em;
+        margin: 1em .3em;
+        font-size: .9em;
+    }
+
+
+    .about img {
+        margin-bottom: 2em;
+    }
+
+
+
+
     /* Main */
     .banner {
         padding: .4em 0;
     }
 
-    /* text */
     .track span {
         font-size: 2rem;
     }
 
-
-    /* My work cards */
     .work-cards {
         grid-template-columns: 1fr;
         gap: 3rem;
