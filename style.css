@@ -657,6 +657,7 @@ footer p {
 
 /* Grid Layout */
 body {
+    background-color: #0f0f0f;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -667,6 +668,7 @@ body {
         "main"
         "footer";
 }
+
 
 
 
@@ -689,7 +691,6 @@ body {
     .icons {
         display: none;
     }
-
 
     nav {
         position: fixed;
@@ -813,5 +814,29 @@ body {
         letter-spacing: .1em;
     }
 
-    
+
+    /* Main */
+    .banner {
+        padding: .4em 0;
+    }
+
+    /* text */
+    .track span {
+        font-size: 2rem;
+    }
+
+
+    /* My work cards */
+    .work-cards {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin: 4em 5vw;
+    }
+
+
+
+    /* Footer */
+    footer p {
+        font-size: .9em;
+    }
 }

@@ -62,16 +62,18 @@ if (parent_grid) {
       window.location.href = card[2];
     });
 
-    if (index === 0) {
-      cardElement.classList.add("large");
-    }
+    if (window.innerWidth > 900) {
+      if (index === 0) {
+        cardElement.classList.add("large");
+      }
 
-    if (index === 1) {
-      cardElement.classList.add("tall");
-    }
+      if (index === 1) {
+        cardElement.classList.add("tall");
+      }
 
-    if (index === 6 || index === 2) {
-      cardElement.classList.add("wide");
+      if (index === 6 || index === 2) {
+        cardElement.classList.add("wide");
+      }
     }
 
     cardElement.appendChild(imageElement);
@@ -92,6 +94,7 @@ if (parent_grid) {
     });
   });
 }
+
 
 
 
