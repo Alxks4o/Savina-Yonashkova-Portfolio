@@ -766,7 +766,15 @@ body {
         left: 0;
         width: 100%;
         transform: translateY(-50%);
-        border-top: .35em solid #fff;
+        border-top: .35em solid white;
+        transition: all 0.15s ease;
+    }
+
+
+    .expand-nav:active,
+    .retract-nav:active {
+        box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.5);
+        transform: translateY(1px) scale(.96);
     }
 
 
