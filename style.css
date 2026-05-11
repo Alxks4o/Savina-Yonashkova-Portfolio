@@ -640,15 +640,10 @@ main {
 
 
 
-
 /* Footer */
-.footer-alt {
-    background-color: #5c2e53d2;
-}
-
 footer {
     grid-area: footer;
-    background-color: #0f0f0f;
+    background: linear-gradient(180deg, #0f0f0f,#0f0f0f, #3f1d38);
 }
 
 footer p {
