@@ -93,3 +93,29 @@ if (parent_grid) {
   });
 }
 
+
+
+
+// Sliding navigation (mobile)
+const expandNav = document.querySelector(".expand-nav");
+const retractNav = document.querySelector(".retract-nav");
+const nav = document.querySelector("nav");
+
+
+expandNav.addEventListener("click", () => {
+  nav.classList.add("open");
+
+  expandNav.style.display = "none";
+  retractNav.style.display = "block";
+
+  // nav.style.backgroundColor = "#5c2e53d2";
+});
+
+retractNav.addEventListener("click", () => {
+  nav.classList.remove("open");
+
+  retractNav.style.display = "none";
+  expandNav.style.display = "block";
+
+  // nav.style.backgroundColor = "transparent";
+});
