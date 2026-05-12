@@ -17,10 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const original = group.innerHTML;
 
-    while (group.scrollWidth < window.innerWidth) {
-      group.innerHTML += original;
-    }
+    let i = 0;
 
+    while (group.scrollWidth < window.innerWidth && i < 10) {
+      group.innerHTML += original;
+      i++;
+    }
   });
 
 });
@@ -104,21 +106,18 @@ const expandNav = document.querySelector(".expand-nav");
 const retractNav = document.querySelector(".retract-nav");
 const nav = document.querySelector("nav");
 
+if (expandNav && retractNav && nav) {
+  expandNav.addEventListener("click", () => {
+    nav.classList.add("open");
 
-expandNav.addEventListener("click", () => {
-  nav.classList.add("open");
+    expandNav.style.display = "none";
+    retractNav.style.display = "block";
+  });
 
-  expandNav.style.display = "none";
-  retractNav.style.display = "block";
+  retractNav.addEventListener("click", () => {
+    nav.classList.remove("open");
 
-  // nav.style.backgroundColor = "#5c2e53d2";
-});
-
-retractNav.addEventListener("click", () => {
-  nav.classList.remove("open");
-
-  retractNav.style.display = "none";
-  expandNav.style.display = "block";
-
-  // nav.style.backgroundColor = "transparent";
-});
+    retractNav.style.display = "none";
+    expandNav.style.display = "block";
+  });
+}

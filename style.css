@@ -65,6 +65,7 @@ nav {
 }
 
 nav {
+    grid-area: nav;
     display: flex;
     align-items: center;
 }
@@ -671,9 +672,6 @@ body {
 
 
 
-@media (max-width: 900px) {}
-
-
 
 /* Mobile version */
 @media (max-width: 900px) {
@@ -900,12 +898,8 @@ body {
 
 
     /* Main */
-    .banner {
-        padding: .4em 0;
-    }
-
-    .track span {
-        font-size: 2rem;
+    .banners {
+        display: none;
     }
 
     .my-work {
