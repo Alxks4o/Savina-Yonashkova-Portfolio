@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Titan+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+
+/* 
+==================
+= Global Designs =
+==================
+*/
+
 :root {
     --accent-color: #863d51;
 }
 
 * {
-    font-family: "Bebas Neue", sans-serif;
     padding: 0;
     margin: 0;
 }
@@ -47,14 +54,16 @@
 }
 
 nav {
-    z-index: 1;
+    z-index: 2;
 }
 
-.hero::after {
-    content: "";
+.hero header {
     position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.507);
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
 }
 
 
@@ -80,6 +89,7 @@ nav ul {
 .get-in-touch {
 
     position: relative;
+    isolation: isolate;
     margin: 2em 3em;
     letter-spacing: .2em;
     padding: .5em 1.2em;
@@ -94,7 +104,7 @@ nav ul {
     inset: 0;
     background: var(--accent-color);
     transform: skew(340deg);
-    z-index: -1;
+    z-index: 0;
 }
 
 .get-in-touch:hover::before {
@@ -102,14 +112,15 @@ nav ul {
 }
 
 .get-in-touch a {
+    position: relative;
     color: white;
+    z-index: 1;
 }
 
 .savina-navbar {
     width: auto;
     max-width: none;
     font-size: 2.8em;
-    letter-spacing: -1px;
     letter-spacing: .05em;
     color: var(--accent-color);
     font-weight: 1000;
@@ -121,14 +132,15 @@ nav .icons {
     margin-left: 1.5em;
 }
 
-nav i {
+nav i,
+.contact-me i {
     padding: .25em;
     font-size: 1.2em;
     color: #e4e4e4;
 
 }
 
-.icons a {
+.icons a .contact-me .icons a .contact-me a {
     display: inline-flex;
     width: 45px;
     height: 45px;
@@ -136,11 +148,16 @@ nav i {
     justify-content: center;
     border-radius: 50%;
     color: #091114;
-    transition: all 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease,
+        text-shadow 0.3s ease;
 }
 
+
 /* LinkedIn */
-.icons a:nth-child(1):hover {
+.icons a:nth-child(1):hover,
+.contact-me a:nth-child(1):hover {
     color: white;
     text-shadow:
         0 0 10px #0ce5da,
@@ -148,8 +165,10 @@ nav i {
     transform: translateY(-3px) scale(1.1);
 }
 
+
 /* Instagram */
-.icons a:nth-child(2):hover {
+.icons a:nth-child(2):hover,
+.contact-me a:nth-child(2):hover {
     color: white;
     text-shadow:
         0 0 8px #833ab4,
@@ -157,8 +176,10 @@ nav i {
     transform: translateY(-3px) scale(1.1);
 }
 
+
 /* Email */
-.icons a:nth-child(3):hover {
+.icons a:nth-child(3):hover,
+.contact-me a:nth-child(3):hover {
     color: white;
     text-shadow:
         0 0 8px #dfc1c1,
@@ -248,6 +269,7 @@ header>h1 {
     line-height: 60px;
     letter-spacing: 10px;
 }
+
 
 
 /* Headers without the background video */
@@ -438,6 +460,7 @@ main {
     grid-area: main;
 }
 
+
 /* My work cards */
 .work-cards {
     display: grid;
@@ -446,6 +469,7 @@ main {
     gap: 1.5rem;
     margin: 4em 5vw;
 }
+
 
 /* Base card */
 .card {
@@ -459,21 +483,6 @@ main {
 }
 
 
-/* Featured variations */
-.card.large {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.card.wide {
-    grid-column: span 2;
-}
-
-.card.tall {
-    grid-row: span 2;
-}
-
-
 /* Images */
 .work-cards img {
     width: 100%;
@@ -483,6 +492,7 @@ main {
     transition: transform 0.4s ease;
     cursor: pointer;
 }
+
 
 /* Slanted button */
 .slanted-bttn {
@@ -519,6 +529,7 @@ main {
     z-index: 2;
 }
 
+
 /* Work Title */
 .work-title {
     margin-top: 5em;
@@ -542,8 +553,31 @@ main {
 
 /* Footer */
 footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-me {
+    margin-top: 7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-me div {
+    display: flex;
+}
+
+.contact-me h1 {
+    color: var(--accent-color);
+}
+
+footer {
     grid-area: footer;
-    background: linear-gradient(180deg, #0f0f0f, #0f0f0f, #3f1d38);
+    background: linear-gradient(180deg, #0f0f0f, #200f1d, #3f1d38);
 }
 
 footer p {
@@ -551,7 +585,7 @@ footer p {
     font-size: 1em;
     letter-spacing: 1px;
     margin: 1em;
-    margin-top: 10em;
+    margin-top: 2em;
     text-align: center;
     color: #dadada;
 }
@@ -560,6 +594,7 @@ footer p {
 
 /* Grid Layout */
 body {
+    font-family: "Bebas Neue", sans-serif;
     background-color: #0f0f0f;
     display: grid;
     grid-template-columns: 100%;
@@ -573,19 +608,11 @@ body {
 }
 
 
+
+
+
 /* Desktop */
 @media (min-width: 900px) {
-
-    /* Hover effects */
-    .card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-    }
-
-    .card:hover img {
-        transform: scale(1.05);
-    }
-
 
     /* Animated banner */
     .banners {
@@ -662,13 +689,35 @@ body {
     }
 
 
+    /* Cards */
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .card:hover img {
+        transform: scale(1.05);
+    }
+
+    /* Featured variations */
+    .card.large {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .card.wide {
+        grid-column: span 2;
+    }
+
+    .card.tall {
+        grid-row: span 2;
+    }
 
     /* Slanted button hover */
     .slanted-bttn:hover::before {
         transform: skew(-20deg) scale(1.05);
         background: #ffffff;
     }
-
 }
 
 
@@ -678,6 +727,10 @@ body {
 
     /* Navbar */
     .get-in-touch {
+        display: none;
+    }
+
+    /* .get-in-touch {
         position: absolute;
         top: -2.5%;
         right: -10%;
@@ -688,7 +741,7 @@ body {
 
     .get-in-touch a {
         font-size: .9em;
-    }
+    } */
 
     .retract-nav {
         display: none;
@@ -704,6 +757,7 @@ body {
     }
 
     nav {
+
         position: fixed;
         flex-direction: column;
         align-items: flex-start;
@@ -723,7 +777,8 @@ body {
     }
 
     nav ul {
-        margin: 1.5em;
+        margin: .9em;
+        margin-top: 7em;
         z-index: 1000;
         display: flex;
         flex-direction: column;
@@ -750,9 +805,9 @@ body {
     /* BURGER ICON */
     .expand-nav,
     .retract-nav {
-        position: relative;
-        margin: 0% 9%;
-        margin-top: 7%;
+        position: fixed;
+        top: 1.5rem;
+        left: 1.5rem;
         height: 2em;
         width: 2.5em;
         border-top: .35em solid white;
@@ -896,7 +951,6 @@ body {
 
 
 
-
     /* Main */
     .banners {
         display: none;
@@ -920,5 +974,7 @@ body {
     /* Footer */
     footer p {
         font-size: .9em;
+        margin: 1em 0;
+        margin-top: 2em;
     }
 }
