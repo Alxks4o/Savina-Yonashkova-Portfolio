@@ -438,83 +438,6 @@ main {
     grid-area: main;
 }
 
-
-/* Animated banner */
-.banners {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    margin: 4em 0;
-}
-
-.banner {
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 1.2em 0;
-}
-
-/* colors */
-.banner:nth-child(1) {
-    background-color: #726DA8;
-}
-
-.banner:nth-child(2) {
-    background-color: var(--accent-color);
-    z-index: 5;
-}
-
-.banner:nth-child(3) {
-    background-color: #CEB7B3;
-}
-
-.banner-angled {
-    transform: rotate(-3deg);
-    width: 150%;
-    margin-left: -25%;
-}
-
-/* marquee system */
-.track {
-    display: flex;
-    width: max-content;
-}
-
-/* each half */
-.group {
-    display: flex;
-}
-
-/* text */
-.track span {
-    font-family: "Montserrat", sans-serif;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #091114;
-    padding-right: 3.5rem;
-}
-
-@keyframes marquee {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-50%);
-    }
-}
-
-/* apply animation */
-.banner-right .track,
-.banner-left .track {
-    animation: marquee 100s linear infinite;
-}
-
-.banner-angled .track {
-    animation: marquee 80s linear infinite;
-}
-
-
-
 /* My work cards */
 .work-cards {
     display: grid;
@@ -523,7 +446,6 @@ main {
     gap: 1.5rem;
     margin: 4em 5vw;
 }
-
 
 /* Base card */
 .card {
@@ -562,18 +484,6 @@ main {
     cursor: pointer;
 }
 
-
-/* Hover effects */
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-}
-
-.card:hover img {
-    transform: scale(1.05);
-}
-
-
 /* Slanted button */
 .slanted-bttn {
     position: absolute;
@@ -608,14 +518,6 @@ main {
     font-weight: 600;
     z-index: 2;
 }
-
-
-/* Slanted button hover */
-.slanted-bttn:hover::before {
-    transform: skew(-20deg) scale(1.05);
-    background: #ffffff;
-}
-
 
 /* Work Title */
 .work-title {
@@ -671,9 +573,107 @@ body {
 }
 
 
+/* Desktop */
+@media (min-width: 900px) {
+
+    /* Hover effects */
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .card:hover img {
+        transform: scale(1.05);
+    }
 
 
-/* Mobile version */
+    /* Animated banner */
+    .banners {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        margin: 4em 0;
+    }
+
+    .banner {
+        overflow: hidden;
+        white-space: nowrap;
+        padding: 1.2em 0;
+    }
+
+    /* colors */
+    .banner:nth-child(1) {
+        background-color: #726DA8;
+    }
+
+    .banner:nth-child(2) {
+        background-color: var(--accent-color);
+        z-index: 5;
+    }
+
+    .banner:nth-child(3) {
+        background-color: #CEB7B3;
+    }
+
+    .banner-angled {
+        transform: rotate(-3deg);
+        width: 150%;
+        margin-left: -25%;
+    }
+
+    /* marquee system */
+    .track {
+        display: flex;
+        width: max-content;
+    }
+
+    /* each half */
+    .group {
+        display: flex;
+    }
+
+    /* text */
+    .track span {
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #091114;
+        padding-right: 3.5rem;
+    }
+
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    /* apply animation */
+    .banner-right .track,
+    .banner-left .track {
+        animation: marquee 100s linear infinite;
+    }
+
+    .banner-angled .track {
+        animation: marquee 80s linear infinite;
+    }
+
+
+
+    /* Slanted button hover */
+    .slanted-bttn:hover::before {
+        transform: skew(-20deg) scale(1.05);
+        background: #ffffff;
+    }
+
+}
+
+
+
+/* Mobile */
 @media (max-width: 900px) {
 
     /* Navbar */
