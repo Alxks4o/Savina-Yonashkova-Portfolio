@@ -757,8 +757,7 @@ body {
     }
 
     nav {
-
-        position: fixed;
+        position: absolute;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
@@ -805,7 +804,7 @@ body {
     /* BURGER ICON */
     .expand-nav,
     .retract-nav {
-        position: fixed;
+        position: absolute;
         top: 1.5rem;
         left: 1.5rem;
         height: 2em;
