@@ -29,15 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const card_details = [
-  ["Film", "./assets/image-1.jpg", "/film.html"],
-  ["Film", "./assets/image-1.jpg", "/film.html"],
-  ["Film", "./assets/image-1.jpg", "/film.html"],
-  ["Film", "./assets/image-1.jpg", "/film.html"],
-  ["Film", "./assets/image-1.jpg", "/film.html"],
-  ["Advertising", "./assets/image-1.jpg", "/advertising.html"],
-  ["Advertising", "./assets/image-1.jpg", "/advertising.html"],
-  ["Advertising", "./assets/image-1.jpg", "/advertising.html"],
-  ["Videography", "./assets/image-1.jpg", "/videography.html"]
+  ["Film", "assets/imgs/film/playwrights assassin.png", "/film.html"],
+  ["Film", "assets/imgs/film/history.png", "/film.html"],
+  ["Film", "assets/imgs/film/tale of grimhilde.png", "/film.html"],
+  ["Film", "assets/imgs/film/echoes of my homeland.png", "/film.html"],
+  ["Film", "assets/imgs/film/the game we play.png", "/film.html"],
+  ["Advertising", "assets/imgs/advertising/hidden gem.png", "/advertising.html"],
+  ["Advertising", "assets/imgs/advertising/saturday night.png", "/advertising.html"],
+  ["Advertising", "assets/imgs/advertising/sewing stories event.png", "/advertising.html"],
+  ["tv", "assets/imgs/videography/trial.png", "/tv.html"]
 ];
 
 const parent_grid = document.querySelector(".work-cards");
