@@ -897,6 +897,7 @@ body {
         font-size: 2em;
     }
 
+    .showreel iframe,
     .film div,
     .media div {
         width: 80%;
@@ -926,7 +927,7 @@ body {
         width: 90%;
     }
 
-    #aside-card video {
+    #aside-card iframe {
         width: 100%;
         max-width: 22rem;
         height: auto;
