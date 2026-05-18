@@ -315,23 +315,15 @@ header>h1 {
 }
 
 .film div,
-.media div {
-    width: 50%;
-    margin: 3% auto 0;
-
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 3em;
-
-    padding: 0 1rem;
-    box-sizing: border-box;
-}
-
+.media div,
 .tv div {
     display: flex;
     margin-top: 3%;
+    max-width: 50rem;
+    width: 80%;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .film iframe,
@@ -343,6 +335,7 @@ header>h1 {
     cursor: pointer;
     border: none;
 }
+
 
 
 /* About */
@@ -368,6 +361,9 @@ header>h1 {
     justify-content: center;
 }
 
+.film div p,
+.media div p,
+.tv div p,
 .about-writing p {
     font-family: "Montserrat", sans-serif;
     text-align: center;
@@ -377,6 +373,13 @@ header>h1 {
     font-size: clamp(.9em, 1.2vw, 1.15em);
     font-weight: 400;
     max-width: 800px;
+}
+
+.film div p,
+.media div p,
+.tv div p {
+    margin: 2em 0;
+    margin-bottom: 20%;
 }
 
 
@@ -540,20 +543,47 @@ main {
 
 
 /* Work Title */
-.work-title {
-    margin-top: 5em;
+.work-title,
+.showreel-title {
+    margin-top: 3em;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
     gap: .2em;
+    margin-bottom: 1em;
 }
 
+.showreel-title {
+    gap: .1em;
+}
+
+.showreel {
+    margin: 1em 0;
+    margin-bottom: 8em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.showreel iframe,
+#aside-card iframe {
+    max-width: 50rem;
+    width: 40%;
+    aspect-ratio: 16 / 9;
+    border-radius: 1em;
+    cursor: pointer;
+    border: none;
+}
+
+.showreel h1:nth-child(1),
 .work-title h1:nth-child(1) {
     color: #ececec;
 }
 
+.showreel h1:nth-child(2),
 .work-title h1:nth-child(2) {
     color: var(--accent-color);
 }
@@ -869,10 +899,8 @@ body {
 
     .film div,
     .media div {
-        width: 100%;
+        width: 80%;
         margin: 5% 0;
-
-        grid-template-columns: 1fr;
     }
 
     .tv iframe {
