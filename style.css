@@ -122,6 +122,7 @@ nav ul {
     position: relative;
     color: white;
     z-index: 1;
+    font-weight: 500;
 }
 
 .savina-navbar {
@@ -735,21 +736,18 @@ body {
 
     /* Navbar */
     .cv {
-        display: none;
-    }
-
-    /* .cv {
         position: absolute;
         top: -2.5%;
-        right: -10%;
+        right: -5%;
 
         z-index: -1;
         width: 6.5em;
     }
 
     .cv a {
-        font-size: .9em;
-    } */
+        font-size: .8em;
+        font-weight: 400;
+    }
 
     .retract-nav {
         display: none;
