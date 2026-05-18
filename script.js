@@ -34,10 +34,10 @@ const card_details = [
   ["Film", "assets/imgs/film/tale of grimhilde.png", "/film.html"],
   ["Film", "assets/imgs/film/echoes of my homeland.png", "/film.html"],
   ["Film", "assets/imgs/film/the game we play.png", "/film.html"],
-  ["Advertising", "assets/imgs/advertising/hidden gem.png", "/advertising.html"],
-  ["Advertising", "assets/imgs/advertising/saturday night.png", "/advertising.html"],
-  ["Advertising", "assets/imgs/advertising/sewing stories event.png", "/advertising.html"],
-  ["tv", "assets/imgs/videography/trial.png", "/tv.html"]
+  ["Media", "assets/imgs/media/hidden gem.png", "/media.html"],
+  ["Media", "assets/imgs/media/saturday night.png", "/media.html"],
+  ["Media", "assets/imgs/media/sewing stories event.png", "/media.html"],
+  ["Tv", "assets/imgs/videography/trial.png", "/tv.html"]
 ];
 
 const parent_grid = document.querySelector(".work-cards");

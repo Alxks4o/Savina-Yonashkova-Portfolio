@@ -27,6 +27,13 @@
     overflow: hidden;
 }
 
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.562);
+}
+
 #bg-video {
     position: absolute;
     top: 0;
@@ -274,7 +281,7 @@ header>h1 {
 
 /* Headers without the background video */
 .hero-film,
-.hero-advertising,
+.hero-media,
 .hero-tv,
 .hero-about {
     background: linear-gradient(180deg, #5e2a53, #30162b, #7e4372, #0f0f0f);
@@ -282,7 +289,7 @@ header>h1 {
 }
 
 .film,
-.advertising,
+.media,
 .tv,
 .about {
     display: flex;
@@ -295,7 +302,7 @@ header>h1 {
 }
 
 .film h1,
-.advertising h1,
+.media h1,
 .tv h1,
 .about h1 {
     font-family: "Montserrat", sans-serif;
@@ -307,7 +314,7 @@ header>h1 {
 }
 
 .film div,
-.advertising div {
+.media div {
     width: 50%;
     margin: 3% auto 0;
 
@@ -327,7 +334,7 @@ header>h1 {
 }
 
 .film iframe,
-.advertising iframe,
+.media iframe,
 .tv iframe {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -849,21 +856,21 @@ body {
 
     /* Headers without the background video */
     .film,
-    .advertising,
+    .media,
     .tv,
     .about {
         margin: 40% 0;
     }
 
     .film h1,
-    .advertising h1,
+    .media h1,
     .tv h1,
     .about h1 {
         font-size: 2em;
     }
 
     .film div,
-    .advertising div {
+    .media div {
         width: 100%;
         margin: 5% 0;
 
