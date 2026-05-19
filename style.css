@@ -18,9 +18,6 @@
     margin: 0;
 }
 
-iframe {
-    z-index: 9999;
-}
 
 
 /* Background Video */
@@ -778,7 +775,7 @@ body {
         top: -2.5%;
         right: -5%;
 
-        z-index: -1;
+        pointer-events: auto;
         width: 6.5em;
     }
 
@@ -801,6 +798,7 @@ body {
     }
 
     nav {
+        pointer-events: none;
         position: absolute;
         flex-direction: column;
         align-items: flex-start;
@@ -814,6 +812,7 @@ body {
         position: absolute;
         inset: 0;
         background-color: #36151eee;
+        z-index: 1;
 
         transform: translateX(-100%);
         transition: transform 0.4s ease-in-out;
@@ -837,6 +836,9 @@ body {
         transform: translateX(0);
     }
 
+    nav.open {
+        pointer-events: auto;
+    }
     nav.open ul {
         transform: translateX(0);
     }
@@ -853,6 +855,7 @@ body {
         left: 1.5rem;
         height: 2em;
         width: 2.5em;
+        z-index: 2000;
         border-top: .35em solid white;
         border-bottom: .35em solid white;
     }
