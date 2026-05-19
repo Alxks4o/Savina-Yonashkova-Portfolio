@@ -336,6 +336,9 @@ header>h1 {
     border: none;
 }
 
+.tv iframe {
+    width: 75%;
+}
 
 
 /* About */
@@ -428,11 +431,13 @@ aside {
     font-weight: 400;
 }
 
-#aside-card video {
-    width: 30em;
+aside iframe {
+    max-width: 50rem;
+    width: 65%;
+    aspect-ratio: 16 / 9;
     border-radius: 1em;
-    margin-left: 3em;
     cursor: pointer;
+    border: none;
 }
 
 .ad-bttn {
@@ -568,8 +573,7 @@ main {
     justify-content: center;
 }
 
-.showreel iframe,
-#aside-card iframe {
+.showreel iframe {
     max-width: 50rem;
     width: 40%;
     aspect-ratio: 16 / 9;
@@ -761,6 +765,7 @@ body {
 
 
 
+
 /* Mobile */
 @media (max-width: 900px) {
 
@@ -903,6 +908,9 @@ body {
         width: 80%;
         margin: 5% 0;
     }
+    .showreel iframe{
+        margin: 0;
+    }
 
     .tv iframe {
         margin-top: 1em;
@@ -913,7 +921,6 @@ body {
 
 
     /* Aside */
-
     #aside-card {
         width: 100%;
         grid-template-columns: 1fr;
@@ -925,15 +932,6 @@ body {
     #aside-card p {
         font-size: 1em;
         width: 90%;
-    }
-
-    #aside-card iframe {
-        width: 100%;
-        max-width: 22rem;
-        height: auto;
-        margin: 0 auto;
-        display: block;
-        border-radius: 1em;
     }
 
     .ad-bttn {
@@ -1001,7 +999,8 @@ body {
         width: 80%;
         grid-template-columns: 1fr;
         gap: 3rem;
-        margin: 4em 0em;
+        margin: 1em 0em;
+        margin-bottom: 3em;
     }
 
 
