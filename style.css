@@ -18,6 +18,9 @@
     margin: 0;
 }
 
+iframe {
+    z-index: 9999;
+}
 
 
 /* Background Video */
