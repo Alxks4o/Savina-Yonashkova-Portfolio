@@ -432,8 +432,8 @@ aside {
 }
 
 aside iframe {
-    max-width: 50rem;
-    width: 65%;
+    max-width: 40rem;
+    width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 1em;
     cursor: pointer;
@@ -839,6 +839,7 @@ body {
     nav.open {
         pointer-events: auto;
     }
+
     nav.open ul {
         transform: translateX(0);
     }
@@ -911,10 +912,11 @@ body {
     .showreel iframe,
     .film div,
     .media div {
-        width: 80%;
+        width: 90%;
         margin: 5% 0;
     }
-    .showreel iframe{
+
+    .showreel iframe {
         margin: 0;
     }
 
@@ -922,6 +924,18 @@ body {
         margin-top: 1em;
         width: 100%;
         height: 100%;
+    }
+
+    .film div p,
+    .media div p,
+    .tv div p {
+        padding: 0;
+        margin: 1em .3em;
+        margin-bottom: 7em;
+        color: #fff;
+        font-size: clamp(.9em, 1.2vw, 1.15em);
+        font-weight: 400;
+        max-width: 800px;
     }
 
 
@@ -967,6 +981,7 @@ body {
 
 
 
+
     /* About */
     .about-container {
         max-width: 30rem;
@@ -987,6 +1002,7 @@ body {
     .about img {
         margin-bottom: 2em;
     }
+
 
 
 
